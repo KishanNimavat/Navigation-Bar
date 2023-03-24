@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+      <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+    background: #e9cf9f;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #5461d6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vw 8vw;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+
+}
+nav i {
+    width: 150px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.4rem;
+}
+nav i a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-left: 8px;
+    color: #ffffff;
+    font-weight: 600;
+}
+nav .navigation {
+    display: flex;
+}
+
+#menu-btn {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+#menu-close {
+    display: none;
+}
+
+nav .navigation ul {
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 30px;
+
+
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+
+}
+
+nav .navigation ul li a:hover {
+    color: #fdc93b;
+}
+nav .navigation ul .btn {
+    margin-left: 5px;
+    padding: 3px 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+}
+
+nav .navigation ul .btn:hover {
+    color: #5461d6;
+    background: #fff;
+}
+
+@media (max-width:769px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav img {
+        width: 130px;
+    }
+
+    #menu-btn {
+
+        display: initial;
+    }
+
+    #menu-close {
+        display: initial;
+        font-size: 1.6rem;
+        color: #fff;
+        padding: 30px 0 20px 20px;
+    }
+
+    nav .navigation ul {
+        position: absolute;
+        top: 0;
+        right: -220px;
+        width: 220px;
+        height: 100vh;
+        background-color: rgba(17, 20, 104, 0.45);
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transition: .3s ease;
+    }
+
+    nav .navigation ul.active {
+        right: 0;
+    }
+
+    nav .navigation ul li {
+        padding: 20px 0 20px 40px;
+        margin-left: 0;
+    }
+
+    nav .navigation ul li a {
+        color: #fff;
+    }
+}
+    </style>
+</head>
+<body>
+     <nav>
+        <i class="fas fa-globe"><a href="#">Navbar</a></i>
+        <div class="navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button class="btn">Login</button></li>
+            </ul>
+            <img id="menu-btn" src="menu.png" alt="">
+        </div>
+    </nav>
+
+    <script>
+
+        $('#menu-btn').click(function () {
+            $('nav .navigation ul').addClass('active')
+        });
+
+        $('#menu-close').click(function () {
+            $('nav .navigation ul').removeClass('active')
+        });
+    </script>
+
+</body>
+</html>
